@@ -80,7 +80,7 @@ function CodeTransformer({ transformMode }: { transformMode: TransformMode }) {
           <CodeEditor
             style={{ fontSize: '16px' }}
             value={jsonValue}
-            height='500px'
+            height='700px'
             extensions={[json()]}
             onChange={handleJsonChange}
           />
@@ -89,7 +89,7 @@ function CodeTransformer({ transformMode }: { transformMode: TransformMode }) {
           <CodeEditor
             style={{ fontSize: '16px' }}
             value={tsValue}
-            height='500px'
+            height='700px'
             extensions={[javascript({ typescript: true })]}
             editable={false}
           />
