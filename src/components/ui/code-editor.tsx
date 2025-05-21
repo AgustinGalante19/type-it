@@ -1,7 +1,9 @@
 import React from 'react';
 import createTheme from '@uiw/codemirror-themes';
 import { tags as t } from '@lezer/highlight';
-import ReactCodeMirror, { ReactCodeMirrorProps } from '@uiw/react-codemirror';
+import ReactCodeMirror, {
+  type ReactCodeMirrorProps,
+} from '@uiw/react-codemirror';
 
 const myTheme = createTheme({
   theme: 'dark',

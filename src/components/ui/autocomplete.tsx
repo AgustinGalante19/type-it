@@ -37,6 +37,7 @@ const Autocomplete = <T,>({
     setIsVisible(!isVisible);
   };
 
+  // biome-ignore lint/correctness/useExhaustiveDependencies: <explanation>
   useEffect(() => {
     if (defaultValue && options) {
       const newCurrentValue = options.find(
@@ -59,6 +60,7 @@ const Autocomplete = <T,>({
     }
   };
 
+  // biome-ignore lint/correctness/useExhaustiveDependencies: <explanation>
   useEffect(() => {
     document.addEventListener('mousedown', handleClickOutside);
     return () => {
@@ -71,7 +73,7 @@ const Autocomplete = <T,>({
       <Button
         disabled={isDisabled}
         className={cn(
-          `text-start flex justify-between border border-neutral-600`,
+          'text-start flex justify-between border border-neutral-600',
           className
         )}
         variant='ghost'
@@ -88,12 +90,12 @@ const Autocomplete = <T,>({
       </Button>
       {isVisible && (
         <ul
-          className={`absolute max-h-[200px] overflow-y-auto overflow-x-hidden over space-y-2 border-x border rounded-md z-[9999] shadow-md mt-1`}
+          className='absolute max-h-[200px] overflow-y-auto overflow-x-hidden over space-y-2 border-x border rounded-md z-[9999] shadow-md mt-1'
           style={{ width }}
         >
           {options.map((option, i) => (
             <li
-              key={i}
+              key={`${getOptionLabel(option)}-${i}`}
               className='hover:bg-neutral-500 transition-colors rounded text-sm'
             >
               <button
