@@ -17,7 +17,6 @@ function CodeTransformer({ transformMode }: { transformMode: TransformMode }) {
 
   useEffect(() => {
     const onChangeOption = async () => {
-      console.log('render');
       if (jsonValue) {
         if (transformMode === 'interface') {
           const output = await convertJsonToTs('Root', jsonValue);
@@ -35,17 +34,17 @@ function CodeTransformer({ transformMode }: { transformMode: TransformMode }) {
     if (!value) return;
 
     setJsonValue(value);
-    if (transformMode === 'interface') {
-      try {
+
+    try {
+      if (transformMode === 'interface') {
         const output = await convertJsonToTs('Root', value);
         setTsValue(output);
-      } catch (err) {
-        console.log(err);
-        setTsValue('// Error: JSON inválido');
+      } else {
+        const output = convertJsonToState(value);
+        setTsValue(output);
       }
-    } else {
-      const output = convertJsonToState(value);
-      setTsValue(output);
+    } catch (err) {
+      setTsValue('// Error: JSON inválido');
     }
   };
 
