@@ -90,7 +90,7 @@ const Autocomplete = <T,>({
       </Button>
       {isVisible && (
         <ul
-          className='absolute max-h-[200px] overflow-y-auto overflow-x-hidden over space-y-2 border-x border rounded-md z-[9999] shadow-md mt-1'
+          className='absolute max-h-[200px] overflow-y-auto overflow-x-hidden over space-y-2 border-x border rounded-md z-[9999] shadow-md mt-1 bg-neutral-900'
           style={{ width }}
         >
           {options.map((option, i) => (
