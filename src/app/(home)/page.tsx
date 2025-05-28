@@ -4,7 +4,12 @@ import { useState } from 'react';
 import CodeTransformer from './components/code-transformer';
 import Header from './components/header';
 
-export type TransformMode = 'initialState' | 'interface';
+export type TransformMode =
+  | 'initialState'
+  | 'interface'
+  | 'agColDef'
+  | 'cvmColDef'
+  | 'rowData';
 
 export default function Home() {
   const [transformMode, setTransformMode] =

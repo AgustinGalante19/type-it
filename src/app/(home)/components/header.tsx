@@ -9,6 +9,9 @@ const options: {
 }[] = [
   { value: 'interface', label: 'Interface' },
   { value: 'initialState', label: 'Initial State' },
+  { value: 'agColDef', label: 'AG ColDef' },
+  { value: 'cvmColDef', label: 'CVM ColDef' },
+  { value: 'rowData', label: 'Row Data' },
 ];
 
 interface HeaderProps {
@@ -19,7 +22,9 @@ interface HeaderProps {
 function Header({ onChangeOption, currentMode }: HeaderProps) {
   return (
     <div className='space-y-4'>
-      <h1 className='text-3xl font-bold text-primary'>Type-It</h1>
+      <h1 className='text-3xl font-bold text-primary'>
+        Type-It - {currentMode}
+      </h1>
       <Autocomplete
         options={options}
         getOptionLabel={(opt) => opt.label}

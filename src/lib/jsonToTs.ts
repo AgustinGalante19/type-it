@@ -5,7 +5,7 @@ import {
   jsonInputForTargetLanguage,
 } from 'quicktype-core';
 
-export async function convertJsonToTs(
+export default async function convertJsonToTs(
   typeName: string,
   json: string
 ): Promise<string> {
