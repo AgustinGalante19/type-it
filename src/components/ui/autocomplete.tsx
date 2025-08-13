@@ -73,7 +73,7 @@ const Autocomplete = <T,>({
       <Button
         disabled={isDisabled}
         className={cn(
-          'text-start flex justify-between border border-neutral-600',
+          'text-start flex justify-between bg-secondary text-secondary-foreground hover:bg-neutral-300 hover:text-secondary-foreground',
           className
         )}
         variant='ghost'
@@ -90,13 +90,13 @@ const Autocomplete = <T,>({
       </Button>
       {isVisible && (
         <ul
-          className='absolute max-h-[200px] overflow-y-auto overflow-x-hidden over space-y-2 border-x border rounded-md z-[9999] shadow-md mt-1 bg-neutral-900'
+          className='absolute max-h-[200px] overflow-y-auto overflow-x-hidden over space-y-2 border-x border rounded-md z-[9999] shadow-md mt-1 bg-secondary-foreground border-primary/20'
           style={{ width }}
         >
           {options.map((option, i) => (
             <li
               key={`${getOptionLabel(option)}-${i}`}
-              className='hover:bg-neutral-500 transition-colors rounded text-sm'
+              className='hover:bg-neutral-500 transition-colors rounded text-sm text-primary-foreground'
             >
               <button
                 type='button'
